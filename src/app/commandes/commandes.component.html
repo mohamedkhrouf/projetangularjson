@@ -1,0 +1,23 @@
+<table class="table">
+  <tr><th>id</th><th>email</th><th>commande</th><th>Price</th></tr>
+  <tbody  *ngFor="let command of commandeList" >
+  <tr>
+    <td> {{command.id}}</td>
+    <td>{{command.user.email}}</td>
+    <td>
+    <div *ngFor="let order of command.order">
+      code:{{order.id}} plat : {{order.name}} prix :{{order.price}}
+    </div>
+    </td>
+
+    <td>{{command.prix}}</td>
+
+
+    <td><button class="btn btn-danger " (click)="deleteCom(command)" >Delete</button></td>
+
+  </tr>
+
+  </tbody>
+
+</table>
+

@@ -1,0 +1,63 @@
+
+<input [(ngModel)]="keyword" >
+<select [(ngModel)]="par"  >
+  <option [ngValue]="'all'" >all</option>
+  <option  [ngValue]="'email'">
+    email
+  </option>
+  <option  [ngValue]="'username'">
+    username
+  </option>
+</select>
+<button (click)="recherche()">search</button>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="limiter">
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div class="table100 ver1 m-b-110">
+        <div class="table100-head">
+          <table>
+            <thead>
+            <tr class="row100 head">
+              <th class="cell100 column1">Id</th>
+              <th class="cell100 column2">Username</th>
+              <th class="cell100 column3">Email</th>
+              <th class="cell100 column4">Action</th>
+
+            </tr>
+            </thead>
+          </table>
+        </div>
+
+        <div class="table100-body js-pscroll">
+          <table>
+            <tbody *ngFor="let user of usersList">
+            <tr class="row100 body">
+              <td class="cell100 column1">{{user.id}}</td>
+              <td class="cell100 column2">{{user.username}}</td>
+              <td class="cell100 column3">{{user.email}}</td>
+
+
+                <td class="cell100 column4" *ngIf="user.admin === false">
+                  <button class="btn btn-warning" [routerLink]="['/updateuser/'+ user.id]">Modify</button>
+                  <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                </td>
+
+
+            </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div></div></div></body></html>

@@ -1,0 +1,34 @@
+<form #f="ngForm">
+
+  <div class="form-group">
+    <label>Name</label>
+    <input [placeholder]="plat.name" type="text" name="name" class="form-control" [(ngModel)]="plat.name">
+
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input [placeholder]="plat.description" type="text" name="description" class="form-control" [(ngModel)]="plat.description">
+
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input [placeholder]="plat.price" type="text" name="price" class="form-control" [(ngModel)]="plat.price">
+
+  </div>
+  <div class="form-group">
+    <label>category</label>
+    <input [placeholder]="plat.category" type="text" name="category" class="form-control" [(ngModel)]="plat.category">
+
+  </div>
+  <label class="image-upload-container btn btn-bwm">
+    <span>Select Image</span>
+    <input #imageInput
+           type="file"
+           accept="image/*"
+           (change)="processFile(imageInput)" >
+  </label>
+
+
+
+  <button class="btn btn-success" [disabled]="f.invalid" (click)="save(imageInput)" routerLink="/plats">save</button>
+</form>

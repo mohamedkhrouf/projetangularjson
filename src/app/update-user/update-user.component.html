@@ -1,0 +1,15 @@
+<form #f="ngForm">
+
+  <div class="form-group">
+    <label>UserName</label>
+    <input [placeholder]="user.username" type="text" name="username" class="form-control" [(ngModel)]="user.username">
+    <div class="alert-danger" *ngIf="uniqUsername()" > username doit etre unique </div>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input [placeholder]="user.email" type="text" name="email" class="form-control" [(ngModel)]="user.email">
+    <div class="alert-danger" *ngIf="uniqEmail()" > email doit etre unique </div>
+  </div>
+  <button class="btn btn-success" [disabled]="f.invalid" (click)="save()" routerLink="/users">save</button>
+</form>
+

@@ -1,0 +1,22 @@
+
+
+
+
+<table class="table">
+  <tr><th>name</th><th>category</th><th>Price</th></tr>
+  <tbody  *ngFor="let pani of panier()" >
+  <tr>
+    <td>{{pani.name}}</td>
+
+    <td>{{pani.category}}</td>
+    <td>{{pani.price}}</td>
+
+
+      <td><button class="btn btn-danger" (click)="deletePlat(pani.id)">Delete</button></td>
+
+  </tr>
+
+  </tbody>
+  <div> prix total : {{prixtot()}} </div>
+</table>
+<td><button class="btn btn-success" (click)="buy()">Buy</button></td>

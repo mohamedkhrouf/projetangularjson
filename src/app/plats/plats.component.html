@@ -1,0 +1,26 @@
+<div id="menu" class="section lb">
+  <div class="container-fluid">
+    <div class="section-title text-center">
+<h3>Menu</h3>
+<p>this is our menu you can choose your favorite dish and add it to your basket and we will deliver it to you</p>
+</div><!-- end title -->
+<div class="gallery-menu text-center row">
+  <div class="col-md-12">
+    <div class="button-group filter-button-group">
+      <button [class]="actAll" class="hvr-radial-in" (click)="all()">All</button>
+      <button [class]="actStarter" class="hvr-radial-in" (click)="starter()">Starters</button>
+      <button [class]="actMain" class="hvr-radial-in" (click)="main()">Main Course </button>
+      <button [class]="actDessert" class="hvr-radial-in" (click)="dessert()">Desserts</button>
+    </div>
+  </div>
+</div>
+<div class="row " >
+
+  <div  *ngFor="let plat of platsList" class="v" >
+ <div *ngIf="(plat.category === categ) || a" >
+<app-plat [plat]="plat"></app-plat>
+  </div><!-- end col -->
+  </div>
+</div><!-- end row -->
+</div><!-- end container -->
+</div><!-- end section -->
