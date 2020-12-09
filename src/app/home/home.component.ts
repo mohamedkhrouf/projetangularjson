@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe(usersList => this.usersList = usersList);
     console.log(Number(sessionStorage.getItem('id')));
+    this.userService.getUserById(Number(sessionStorage.getItem('id')));
   }
   // tslint:disable-next-line:typedef
   user(){

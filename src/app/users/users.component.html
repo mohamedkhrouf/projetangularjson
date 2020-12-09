@@ -1,15 +1,23 @@
 
-<input [(ngModel)]="keyword" >
-<select [(ngModel)]="par"  >
-  <option [ngValue]="'all'" >all</option>
-  <option  [ngValue]="'email'">
-    email
-  </option>
-  <option  [ngValue]="'username'">
-    username
-  </option>
-</select>
-<button (click)="recherche()">search</button>
+<div class="wrap">
+  <div class="search">
+    <input type="text" class="searchTerm" placeholder="What are you looking for?" [(ngModel)]="keyword">
+    <select [(ngModel)]="par"  >
+      <option [ngValue]="'all'" >all</option>
+      <option  [ngValue]="'email'">
+        email
+      </option>
+      <option  [ngValue]="'username'">
+        username
+      </option>
+    </select>
+    <button type="submit" class="searchButton">
+      <i class="fa fa-search"></i>
+    </button>
+
+  </div>
+</div>
+
 
 
 <!DOCTYPE html>

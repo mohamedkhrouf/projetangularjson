@@ -1,22 +1,52 @@
 
-
-
-
-<table class="table">
-  <tr><th>name</th><th>category</th><th>Price</th></tr>
-  <tbody  *ngFor="let pani of panier()" >
-  <tr>
-    <td>{{pani.name}}</td>
-
-    <td>{{pani.category}}</td>
-    <td>{{pani.price}}</td>
-
-
-      <td><button class="btn btn-danger" (click)="deletePlat(pani.id)">Delete</button></td>
-
-  </tr>
-
-  </tbody>
-  <div> prix total : {{prixtot()}} </div>
-</table>
 <td><button class="btn btn-success" (click)="buy()">Buy</button></td>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="limiter">
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div class="table100 ver1 m-b-110">
+        <div class="table100-head">
+          <table>
+            <thead>
+            <tr class="row100 head">
+              <th class="cell100 column1">name</th>
+              <th class="cell100 column2">category</th>
+              <th class="cell100 column3">Price</th>
+              <th class="cell100 column4">Action</th>
+
+            </tr>
+            </thead>
+          </table>
+        </div>
+
+        <div class="table100-body js-pscroll">
+          <table>
+            <tbody *ngFor="let pani of user.panier">
+            <tr class="row100 body">
+              <td class="cell100 column1">{{pani.name}}</td>
+              <td class="cell100 column2">{{pani.category}}</td>
+              <td class="cell100 column3">{{pani.price}}</td>
+
+
+              <td class="cell100 column4" >
+                <button class="btn btn-danger" (click)="deletePlat(pani.id)">Delete</button>
+              </td>
+
+
+            </tr>
+
+
+            </tbody>
+            <div> prix total : {{prixtot()}} </div>
+            <div><button class="btn btn-success" (click)="buy()">Buy</button></div>
+          </table>
+        </div>
+      </div>
+    </div></div></div></body></html>

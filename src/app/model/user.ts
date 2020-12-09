@@ -7,4 +7,8 @@ export class User {
   password: string;
   admin: boolean;
   panier: Plat[];
+  constructor() {
+    this.panier = [];
+  }
+
 }

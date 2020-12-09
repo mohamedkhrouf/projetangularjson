@@ -2,12 +2,12 @@
   <tr><th>id</th><th>email</th><th>commande</th><th>Price</th></tr>
 
   <tbody  *ngFor="let command of commandeList" >
-  <tr *ngIf="command.user.id === id">
+  <tr *ngIf="command.user.id === id ">
     <td> {{command.id}}</td>
     <td>{{command.user.email}}</td>
     <td>
       <div *ngFor="let order of command.order">
-        code:{{order.id}} plat : {{order.name}} prix :{{order.price}}
+         plat : {{order.name}} prix :{{order.price}}
       </div>
     </td>
 
