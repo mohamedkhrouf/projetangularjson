@@ -37,9 +37,9 @@ user1: User;
           sessionStorage.setItem('id', String(this.usersList[i].id));
           n = true;
           if (this.usersList[i].admin === true){
-            this.router.navigate(['/users']);
+            this.router.navigate(['/home']);
           }else {
-            this.router.navigate(['/users']);
+            this.router.navigate(['/home']);
           }
         }else{
         }
@@ -58,7 +58,7 @@ user1: User;
         );
         sessionStorage.setItem('id', String(this.usersList[this.usersList.length - 1].id + 1));
         // @ts-ignore
-        this.router.navigate(['/users']);
+        this.router.navigate(['/home']);
       }
     }
   }

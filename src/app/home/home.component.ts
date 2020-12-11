@@ -9,13 +9,14 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  private usersList: User[];
+   usersList: User[];
+  private userc: User;
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.userc = new User();
     this.userService.getAllUsers().subscribe(usersList => this.usersList = usersList);
-    console.log(Number(sessionStorage.getItem('id')));
-    this.userService.getUserById(Number(sessionStorage.getItem('id')));
+    this.userService.getUserById(Number(sessionStorage.getItem('id'))).subscribe( user => this.userc = user);
   }
   // tslint:disable-next-line:typedef
   user(){
@@ -28,5 +29,8 @@ export class HomeComponent implements OnInit {
   logout(){
     sessionStorage.removeItem('id');
     alert('disconnected');
+  }
+  panier(){
+    return this.userc.panier.length;
   }
 }

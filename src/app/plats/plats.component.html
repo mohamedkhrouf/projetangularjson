@@ -14,12 +14,12 @@
     </div>
   </div>
 </div>
-<div class="row " >
+<div class="row" >
 
-  <div  *ngFor="let plat of platsList" class="v" >
- <div *ngIf="(plat.category === categ) || a" >
-<app-plat [plat]="plat"></app-plat>
-  </div><!-- end col -->
+  <div  *ngFor="let plat of platsList" class="" >
+
+<app-plat *ngIf="(plat.category === categ) || a" [plat]="plat"></app-plat>
+ <!-- end col -->
   </div>
 </div><!-- end row -->
 </div><!-- end container -->

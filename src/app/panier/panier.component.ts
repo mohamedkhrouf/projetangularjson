@@ -63,12 +63,17 @@ delete(){
     user => this.user = user,
     error1 => {
       console.error('error updating user');
-    });
+    },
+    () => {
+      location.reload();
+    }
+    );
 }
   // tslint:disable-next-line:typedef
   buy() {
     this.commande = new Commande();
     console.log(this.commande);
+    this.commande.seen = false;
     this.commande.user = this.user;
     this.commande.order = this.user.panier;
     this.commande.prix = this.prixtot();

@@ -37,7 +37,8 @@ export class PlatComponent implements OnInit {
       user => this.current = user,
       error1 => {
         console.error('error updating user');
-      });
-
+      },
+      () => {location.reload();
+      } );
   }
 }

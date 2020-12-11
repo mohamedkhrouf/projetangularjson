@@ -1,10 +1,9 @@
 <table class="table">
-  <tr><th>id</th><th>email</th><th>commande</th><th>Price</th></tr>
+  <tr><th>id</th><th>commande</th><th>Price</th></tr>
 
-  <tbody  *ngFor="let command of commandeList" >
+  <tbody  *ngFor="let command of commandeList " >
   <tr *ngIf="command.user.id === id ">
     <td> {{command.id}}</td>
-    <td>{{command.user.email}}</td>
     <td>
       <div *ngFor="let order of command.order">
          plat : {{order.name}} prix :{{order.price}}
@@ -14,10 +13,62 @@
     <td>{{command.prix}}</td>
 
 
-    <td><button class="btn btn-danger " (click)="deleteCom(command)" >Delete</button></td>
+    <td *ngIf="command.seen === false"><button class="btn btn-danger " (click)="deleteCom(command)" >Delete</button></td>
 
   </tr>
 
   </tbody>
 
 </table>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div class="limiter">
+  <div class="container-table100">
+    <div class="wrap-table100">
+      <div class="table100 ver4 m-b-110">
+        <div class="table100-head">
+          <table>
+            <thead>
+            <tr class="row100 head">
+              <th class="cell100 column1">id</th>
+              <th class="cell100 column2">commande</th>
+              <th class="cell100 column3">Price</th>
+              <th class="cell100 column4">Action</th>
+
+            </tr>
+            </thead>
+          </table>
+        </div>
+
+        <div class="table100-body js-pscroll">
+          <table>
+            <tbody *ngFor="let command of commandeList ">
+            <tr class="row100 body" *ngIf="command.user.id === id ">
+              <td class="cell100 column1">{{command.id}}</td>
+              <td class="cell100 column2"> <div *ngFor="let order of command.order">
+                plat : {{order.name}} prix :{{order.price}}
+              </div></td>
+              <td class="cell100 column3" >
+                {{command.prix}}</td>
+
+
+              <td class="cell100 column4" *ngIf="command.seen === false">
+                <button class="btn btn-danger " (click)="deleteCom(command)" >Delete</button>
+
+              </td>
+
+            </tr>
+
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div></div></div></body></html>

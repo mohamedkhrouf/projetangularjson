@@ -11,6 +11,7 @@ export class Commande {
   user: User;
   order: Plat[];
   prix: number;
+  seen: boolean;
   // tslint:disable-next-line:typedef
 
 }

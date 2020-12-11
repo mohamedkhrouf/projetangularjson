@@ -10,12 +10,14 @@ import {User} from '../model/user';
 })
 export class UpdateUserComponent implements OnInit {
   user: User;
+ userc: User;
   constructor(private userService: UserService, private service: ActivatedRoute) { }
 usersList: User[];
   ngOnInit(): void {
     this.user = new User();
     this.userService.getUserById(this.service.snapshot.params.id).subscribe( user => this.user = user);
     this.userService.getAllUsers().subscribe(usersList => this.usersList = usersList);
+    this.userService.getUserById(Number(sessionStorage.getItem('id'))).subscribe( user => this.userc = user);
   }
   // tslint:disable-next-line:typedef
   save(){

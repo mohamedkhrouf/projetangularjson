@@ -22,4 +22,21 @@ commandeList: Commande[];
     );
   }
 
+  // tslint:disable-next-line:typedef
+  activer(commande) {
+    commande.seen = true;
+    this.commandeService.putCommande(commande).subscribe(   command => commande = command,
+      error1 => {
+        console.error('error updating commande');
+      });
+  }
+
+  // tslint:disable-next-line:typedef
+  desactiver(commande: Commande) {
+    commande.seen = false;
+    this.commandeService.putCommande(commande).subscribe(   command => commande = command,
+      error1 => {
+        console.error('error updating commande');
+      });
+  }
 }
